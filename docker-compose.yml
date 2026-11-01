@@ -1,0 +1,10 @@
+services:
+  linux-downloader:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      COBALT_API_URL: ${COBALT_API_URL}
+      COBALT_API_KEY: ${COBALT_API_KEY:-}
+    restart: unless-stopped
